@@ -1,0 +1,39 @@
+---
+import GithubRepositories from '../components/GithubRepos.astro';
+---
+
+<section class="h-screen relative">
+   <img
+      src="/iluminaciones-portfolio.svg"
+      class="absolute -top-64 w-4/6 z-0"
+      alt="Iluminacion"
+   />
+
+   <div
+      class="w-11/12 mx-auto flex justify-center flex-col items-center relative z-10"
+      data-aos="fade-up"
+   >
+      <div class="flex flex-col items-center">
+         <h2 class="text-4xl font-extrabold text-white">Mi Portafolio</h2>
+         <span class="h-[6px] my-2 w-24 block bg-gradient-to-r from-[#8F00FF] to-[#00B2FF]"
+         ></span>
+      </div>
+
+      <ul class="grid grid-cols-3 gap-7 mt-7">
+         <a href="#" class="flex flex-col items-center justify-center">
+            <div class="w-72 h-52 block bg-gray-800 rounded-md"></div>
+            <p class="text-gray-300 mt-4">Similique facilis quisquambeatae?</p>
+         </a>
+         <a href="#" class="flex flex-col items-center justify-center">
+            <div class="w-72 h-52 block bg-gray-800 rounded-md"></div>
+            <p class="text-gray-300 mt-4">Similique facilis quisquambeatae?</p>
+         </a>
+         <a href="#" class="flex flex-col items-center justify-center">
+            <div class="w-72 h-52 block bg-gray-800 rounded-md"></div>
+            <p class="text-gray-300 mt-4">Similique facilis quisquambeatae?</p>
+         </a>
+      </ul>
+   </div>
+</section>
+
+<GithubRepositories />
