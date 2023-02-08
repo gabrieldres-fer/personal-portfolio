@@ -18,7 +18,7 @@ export const routes: Routes[] = [
    },
    {
       name: 'Contactame',
-      scroll: 1300,
+      scroll: 2300,
    },
 ];
 
