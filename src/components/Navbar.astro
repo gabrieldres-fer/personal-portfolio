@@ -1,38 +1,109 @@
-<nav class="fixed z-20 backdrop-blur-md w-full">
-   <div class="w-11/12 mx-auto">
-      <div class="flex justify-between items-center py-5 relative z-10">
-         <img src="/logo.svg" alt="mi logo" />
+<nav class="fixed z-20 backdrop-blur-md h-[90px] w-full">
+    <div class="w-11/12 mx-auto">
+        <div class="flex justify-between items-center py-5 relative h-full z-10">
+            <img src="/logo.svg" alt="mi logo" />
 
-         <div class="text-white font-medium flex" id="navButtonsContainer"></div>
+            <!--* Los links se generan de routes/index.ts  -->
+            <div
+                class="text-white font-medium md:flex md:w-auto w-full md:text-base text-lg leading-10 transition-all hidden"
+                id="navButtonsContainer"
+            >
+            </div>
 
-         <div class="flex items-center">
-            <a
-               href="https://github.com/gabrieldres-fer"
-               target="_blank"
-               class="mr-4 w-7 hover:scale-110 transition ease-in"
-               rel="noopener noreferrer"
-            >
-               <img src="/github.svg" alt="cuenta de github" />
-            </a>
-            <a
-               href="https://www.instagram.com/gabrielandres.fer/"
-               target="_blank"
-               class="mr-4 w-7 hover:scale-110 transition ease-in"
-               rel="noopener noreferrer"
-            >
-               <img src="/instagram.svg" alt="cuenta de instagram" />
-            </a>
-            <a
-               href="https://twitter.com/Gabrieldres_fer"
-               target="_blank"
-               class="w-7 hover:scale-110 transition ease-in"
-               rel="noopener noreferrer"
-            >
-               <img src="/twitter.svg" alt="cuenta de instagram" />
-            </a>
-         </div>
-      </div>
-   </div>
+            <div class="flex md:hidden flex-col items-end cursor-pointer" id="menu">
+                <span class="rounded-full block h-[3px] bg-white transition-all w-8 mb-1"
+                ></span>
+                <span class="rounded-full block h-[3px] bg-white w-6 mb-1 transition-all"
+                ></span>
+                <span class="rounded-full block h-[3px] bg-white w-8 transition-all"></span>
+            </div>
+
+            <div class="md:flex items-center hidden">
+                <a
+                    href="https://github.com/gabrieldres-fer"
+                    target="_blank"
+                    class="mr-4 w-7 hover:scale-110 transition ease-in"
+                    rel="noopener noreferrer"
+                >
+                    <img src="/github.svg" alt="cuenta de github" />
+                </a>
+                <a
+                    href="https://www.instagram.com/gabrielandres.fer/"
+                    target="_blank"
+                    class="mr-4 w-7 hover:scale-110 transition ease-in"
+                    rel="noopener noreferrer"
+                >
+                    <img src="/instagram.svg" alt="cuenta de instagram" />
+                </a>
+                <a
+                    href="https://twitter.com/Gabrieldres_fer"
+                    target="_blank"
+                    class="w-7 hover:scale-110 transition ease-in"
+                    rel="noopener noreferrer"
+                >
+                    <img src="/twitter.svg" alt="cuenta de twitter" />
+                </a>
+            </div>
+        </div>
+    </div>
 </nav>
 
 <script src="../routes/index.ts"></script>
+
+<script>
+    const navContainer = document.querySelector('nav');
+    const buttonsNavContainer = document.getElementById('navButtonsContainer');
+    const menu = document.getElementById('menu');
+    const barra: NodeListOf<HTMLSpanElement> = menu.querySelectorAll('span');
+    let click: number = 0;
+
+    menu.addEventListener('click', () => {
+        click++;
+
+        switch (click) {
+            case 1:
+                barra[0].classList.add('rotate-45');
+                barra[1].classList.add('hidden');
+                barra[2].classList.add('-translate-y-[7px]', '-rotate-45');
+
+                navContainer.classList.add('h-[290px]');
+                navContainer.classList.remove('h-[90px]');
+
+                buttonsNavContainer.classList.remove('hidden');
+                buttonsNavContainer.classList.add('flex', 'flex-col', 'absolute', 'top-24');
+                break;
+
+            case 2:
+                // Barras del menu hamburguesa
+                barra[0].classList.remove('rotate-45');
+                barra[1].classList.remove('hidden');
+                barra[2].classList.remove('-translate-y-[7px]', '-rotate-45');
+
+                buttonsNavContainer.classList.add('hidden');
+                buttonsNavContainer.classList.remove('flex', 'flex-col');
+
+                navContainer.classList.remove('h-[290px]');
+                navContainer.classList.add('h-[90px]');
+
+                click = 0;
+                break;
+        }
+
+        buttonsNavContainer.querySelectorAll('button').forEach((button: HTMLElement) => {
+            button.addEventListener('click', () => {
+                // Barras del menu hamburguesa
+                barra[0].classList.remove('rotate-45');
+                barra[1].classList.remove('hidden');
+                barra[2].classList.remove('-translate-y-[7px]', '-rotate-45');
+
+                buttonsNavContainer.classList.add('hidden');
+                buttonsNavContainer.classList.remove('flex');
+
+                navContainer.classList.remove('h-[290px]');
+                navContainer.classList.add('h-[90px]');
+
+                click = 0;
+            });
+        });
+    });
+</script>
