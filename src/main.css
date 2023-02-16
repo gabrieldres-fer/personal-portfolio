@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .styles-tech {
+        @apply font-semibold transition-all ease-in duration-200 cursor-default;
+    }
+}
