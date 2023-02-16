@@ -24,16 +24,18 @@ export const routes: Routes[] = [
 
 const navButtonsContainer = document.getElementById('navButtonsContainer');
 
-routes.forEach((route) => {
+routes.forEach(route => {
     const btn = document.createElement('button');
+
     btn.classList.add(
         'md:mr-8',
         'cursor-pointer',
         'transition',
         'ease-in',
         'duration-200',
-        'hover:text-[#35fd7e]'
+        'hover:text-[#35fd7e]',
     );
+
     btn.innerText = route.name;
     navButtonsContainer.appendChild(btn);
 
