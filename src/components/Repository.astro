@@ -1,28 +1,28 @@
 ---
 interface Props {
-  title: string;
-  description: string;
-  link: string;
+    title: string;
+    description: string;
+    link: string;
 }
 
 const { title, description, link } = Astro.props;
 ---
 
 <li class="repository">
-  <a href={link} target="_blank" rel="noopener noreferrer">
-    <div
-      class="bg-gradient-to-b from-[#0000005b] p-6 relative rounded-lg hover:shadow-md hover:[box-shadow:_0_0_20px_#9428ffe9] hover:scale-105 transition ease duration-300"
-    >
-      <svg
-        width="25"
-        height="24"
-        viewBox="0 0 25 24"
-        fill="none"
-        class="absolute right-10 w-7"
-        xmlns="httpwww.w3.org/2000/svg"
-      >
-        <path
-          d="M21.25 3.75003H13.4L13 2.50003C12.7407
+    <a href={link} target="_blank" rel="noopener noreferrer">
+        <div
+            class="bg-gradient-to-b from-[#0000005b] p-6 relative rounded-lg hover:shadow-md hover:[box-shadow:_0_0_20px_#9428ffe9] hover:scale-105 transition ease duration-300"
+        >
+            <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                class="absolute right-10 w-7"
+                xmlns="httpwww.w3.org/2000/svg"
+            >
+                <path
+                    d="M21.25 3.75003H13.4L13 2.50003C12.7407
 1.76657 12.2597 1.13191 11.6236 0.683979C10.9876 0.236051 10.2279 -0.00297112 9.45
 2.78795e-05H3.75C2.75544 2.78795e-05 1.80161 0.395116 1.09835 1.09838C0.395088 1.80164 0
 2.75547 0 3.75003V20C0 20.9946 0.395088 21.9484 1.09835 22.6517C1.80161 23.3549 2.75544 23.75
@@ -35,27 +35,29 @@ const { title, description, link } = Astro.props;
 10.6375 3.35003L11.3125 5.40003C11.3964 5.6483 11.5561 5.86395 11.7692 6.01648C11.9823 6.169
 12.2379 6.2507 12.5 6.25003H21.25C21.5815 6.25003 21.8995 6.38172 22.1339 6.61614C22.3683
 6.85057 22.5 7.16851 22.5 7.50003V20Z"
-          fill="#00FF85"></path>
-      </svg>
-      <div class="pt-2">
-        <h3 class="text-xl text-white font-extrabold">{title}</h3>
-        <p class="text-gray-400 text-sm w-5/6">{description}</p>
-      </div>
-      <div class="pt-4 text-sm">
-        <p class="text-white">Construido con:</p>
-        <ul class="grid grid-cols-3 gap-2 w-24 items-center pt-2">
-          <slot />
-        </ul>
-      </div>
-    </div>
-  </a>
+                    fill="#00FF85"></path>
+            </svg>
+
+            <div class="pt-2">
+                <h3 class="text-xl text-white font-extrabold">{title}</h3>
+                <p class="text-gray-400 text-sm w-5/6">{description}</p>
+            </div>
+
+            <div class="pt-4 text-sm">
+                <p class="text-white">Construido con:</p>
+                <ul class="grid grid-cols-3 gap-2 w-24 items-center pt-2">
+                    <slot />
+                </ul>
+            </div>
+        </div>
+    </a>
 </li>
 
 <script>
-  const cardsRepositories = document.querySelectorAll('.repository');
+    const cardsRepositories = document.querySelectorAll(".repository");
 
-  cardsRepositories.forEach((card) => {
-    card.addEventListener('mouseenter', () => card.classList.add('fill-[#8E1DFF]'));
-    card.addEventListener('mouseleave', () => card.classList.remove('fill-[#8E1DFF]'));
-  });
+    cardsRepositories.forEach((card) => {
+        card.addEventListener("mouseenter", () => card.classList.add("fill-[#8E1DFF]"));
+        card.addEventListener("mouseleave", () => card.classList.remove("fill-[#8E1DFF]"));
+    });
 </script>
