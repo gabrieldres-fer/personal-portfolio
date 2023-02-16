@@ -1,0 +1,17 @@
+---
+    interface Props  {
+        title: string;
+        url: string
+        // imgUrl: string;
+    }
+
+    const { title, url }: Props = Astro.props;
+---
+
+<li>
+    <a href={url} class="flex flex-col items-center justify-center">
+        <!-- <img src={imgUrl} alt="proyecto"> -->
+        <div class="w-72 h-52 block bg-gray-800 rounded-md"></div>
+        <p class="text-gray-300 mt-4">{title}</p>
+    </a>
+</li>
