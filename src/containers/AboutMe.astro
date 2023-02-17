@@ -1,5 +1,6 @@
 ---
 import Title from "@components/Title.astro"
+import { technologies } from "data/TechSkills";
 ---
 
 <main class="md:w-11/12 w-10/12 mx-auto min-h-screen" data-aos="fade-up">
@@ -19,46 +20,7 @@ import Title from "@components/Title.astro"
             
             <!-- Tecnologias -->
             <ul class="grid md:grid-cols-4 grid-cols-3 md:w-1/2 gap-y-10 gap-x-4 mt-7">
-                <li
-                    class="text-[#00A3FF] [text-shadow:0_0_25px_#00A3FF] hover:[text-shadow:0_0_30px_#00A3FF] styles-tech"
-                >
-                    Typescript
-                </li>
-                <li
-                    class="text-gray-300 [text-shadow:_0_0_25px_#BD00FF] hover:[text-shadow:_0_0_30px_#BD00FF] styles-tech"
-                >
-                    Wordpress
-                </li>
-                <li
-                    class="text-[#00ffff] [text-shadow:_0_0_25px_#00ffff] hover:[text-shadow:_0_0_30px_#00ffff] styles-tech"
-                >
-                    React.js
-                </li>
-                <li
-                    class="text-[#FF7A00] [text-shadow:_0_0_25px_#FF7A00] hover:[text-shadow:_0_0_30px_#FF7A00] styles-tech"
-                >
-                    Astro.js
-                </li>
-                <li
-                    class="text-[#00FF94] [text-shadow:_0_0_30px_#00FF94] hover:[text-shadow:_0_0_35px_#00FF94] styles-tech"
-                >
-                    Tailwind
-                </li>
-                <li
-                    class="text-[#FF007A] [text-shadow:_0_0_25px_#FF007A] hover:[text-shadow:_0_0_30px_#FF007A] styles-tech"
-                >
-                    Next.js
-                </li>
-                <li
-                    class="text-[#52FF00] [text-shadow:_0_0_25px_#52FF00] hover:[text-shadow:_0_0_30px_#52FF00] styles-tech"
-                >
-                    Nodejs
-                </li>
-                <li
-                    class="text-[#F7DF1E] [text-shadow:0_0_25px_#FFF500] hover:[text-shadow:_0_0_30px_#F7DF1E] styles-tech"
-                >
-                    Javascript
-                </li>
+                {technologies.map(tech => <li class={tech.classes}>{tech.name}</li>)}
             </ul>
         </div>
         <img src="/me.png" class="w-[300px] md:flex hidden" alt="Gabriel Fernandez" />
