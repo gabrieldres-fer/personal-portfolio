@@ -1,11 +1,11 @@
-<nav class="fixed z-20 backdrop-blur-md h-[90px] w-full">
+<nav class="fixed z-20 backdrop-blur-md md:h-[90px] w-full">
     <div class="w-11/12 mx-auto">
         <div class="flex justify-between items-center py-5 relative h-full z-10">
             <img src="/logo.svg" alt="mi logo" />
 
             <!--* Los links se generan de routes/index.ts  -->
             <div
-                class="text-white font-medium md:flex md:w-auto w-full md:text-base text-lg leading-10 transition-all hidden"
+                class="text-white font-medium md:flex md:w-auto w-full md:text-base text-lg leading-10 transition-all hidden md:flex-row md:static"
                 id="navButtonsContainer"
             >
             </div>
@@ -18,7 +18,7 @@
                 <span class="rounded-full block h-[3px] bg-white w-8 transition-all"></span>
             </div>
 
-            <div class="md:flex items-center hidden">
+            <div class="md:flex  items-center hidden">
                 <a
                     href="https://github.com/gabrieldres-fer"
                     target="_blank"
@@ -71,6 +71,7 @@
 
                 buttonsNavContainer.classList.remove('hidden');
                 buttonsNavContainer.classList.add('flex', 'flex-col', 'absolute', 'top-24');
+                
                 break;
 
             case 2:
