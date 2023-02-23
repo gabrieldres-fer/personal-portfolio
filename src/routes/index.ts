@@ -3,22 +3,27 @@ interface Routes {
     scroll: number;
 }
 
+const screenWidth = window.innerWidth;
+const portfolio = document.getElementById('portfolio');
+const aboutMe = document.getElementById('aboutme');
+const contactMe = document.getElementById('contactme');
+
 export const routes: Routes[] = [
     {
         name: 'Inicio',
-        scroll: 0,
+        scroll: 0, 
     },
     {
         name: '¿Quien Soy?',
-        scroll: 500,
+        scroll: (aboutMe.getBoundingClientRect().top + window.pageYOffset) - 200,
     },
     {
         name: 'Portafolio',
-        scroll: 1130,
+        scroll: (portfolio.getBoundingClientRect().top + window.pageYOffset) - 200,
     },
     {
         name: 'Contactame',
-        scroll: 2300,
+        scroll: (contactMe.getBoundingClientRect().top + window.pageYOffset),
     },
 ];
 
